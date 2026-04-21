@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users List</title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>List of users</h1>
+    <p style="text-align: center">
+      <a href="/events_page">Go to events list</a> | <a href="/comments_page">Go to comments list</a>
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Is Admin</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.is_admin }}</td>
+          <td><a href="/user_page/{{ user.id }}">Open profile</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

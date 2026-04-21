@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments List</title>
+    <link href="/static/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>List of comments</h1>
+    <p style="text-align: center"><a href="/events_page">Go to events list</a></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Content</th>
+          <th>User ID</th>
+          <th>Event ID</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for comment in comments %}
+        <tr>
+          <td>{{ comment.id }}</td>
+          <td>{{ comment.content }}</td>
+          <td>{{ comment.user_id }}</td>
+          <td>{{ comment.event_id }}</td>
+          <td>{{ comment.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

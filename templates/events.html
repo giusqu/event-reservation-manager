@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <html>
+    <head>
+      <title>Event Details</title>
+      <link href="/static/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+      <h1>List of events</h1>
+      <p style="text-align: center">
+        <a href="/users_page">Go to users list</a> | <a href="/comments_page">Go to comments list</a>
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Data</th>
+            <th>Location</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+          <tr>
+            <td>{{ event.id }}</td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.date }}</td>
+            <td>{{ event.location }}</td>
+            <td>{{ event.capacity }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </body>
+  </html>
+</html>
