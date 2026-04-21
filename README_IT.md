@@ -1,4 +1,4 @@
-# Event Serervation Manager (ERM)
+# Event Reserervation Manager (ERM)
 
 ## 1. Specifica del progetto
 
